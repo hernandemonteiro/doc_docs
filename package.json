@@ -15,10 +15,11 @@
     "os": false
   },
   "scripts": {
-    "start": "webpack serve --progress --inline --hot --port 8080",
+    "test": "webpack serve --progress --inline --hot --port 8080",
     "build": "cross-env NODE_ENV=production babel . --out-dir dist",
     "compile": "tsc",
-    "dev": "next dev"
+    "dev": "next dev",
+    "start": "next start"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
