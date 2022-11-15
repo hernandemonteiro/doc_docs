@@ -6,6 +6,7 @@ export default function ComponentOrDocs(props) {
     <>
       {props.route.match("/docs") ? (
         <TemplateReactDocs
+        style={{maxWidth: "100vw"}}
           dirs={props.dirs}
           subDirs={props.subDirs}
           projectLogo={props.projectLogo}

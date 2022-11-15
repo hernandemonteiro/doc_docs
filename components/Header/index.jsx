@@ -1,5 +1,4 @@
 import React from "react";
-import store from "store2";
 import {
   AiFillGithub,
   AiFillFacebook,

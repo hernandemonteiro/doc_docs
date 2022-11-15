@@ -5,20 +5,20 @@ import "./style.css";
 
 function MyApp(props) {
   return (
-    <>
+    <div style={{width: "96.1vw"}}>
       <ComponentOrDocs
         dirs={props.dirs}
         subDirs={props.subDirs}
         Component={props.Component}
         pageProps={props.pageProps}
         route={props.router.route}
-        projectLogo={"Hernande Monteiro - Personal Blog"}
+        projectLogo={"Doc Docs - Documentation"}
         github="https://github.com/hernandemonteiro/personal_blog"
         website="https://hernandemonteiro.vercel.app"
         instagram="https://instagram.com/monteiro.ops"
       />
       
-    </>
+    </div>
   );
 }
 
