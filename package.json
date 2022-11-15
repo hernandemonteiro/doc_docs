@@ -16,7 +16,8 @@
   },
   "scripts": {
     "test": "webpack serve --progress --inline --hot --port 8080",
-    "build": "cross-env NODE_ENV=production babel . --out-dir dist",
+    "packageBuild": "cross-env NODE_ENV=production babel . --out-dir dist",
+    "build": "next build",
     "compile": "tsc",
     "dev": "next dev",
     "start": "next start"
