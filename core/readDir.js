@@ -1,4 +1,4 @@
-import fs from "fs";
+import * as fs from "fs";
 export function readNavDir(dir) {
   let structSubDirs = {};
   fs.readdirSync(dir)
@@ -24,7 +24,6 @@ export function readNavDir(dir) {
 
 export function readDirs(dir) {
   let struct = {};
-
   fs.readdirSync(dir)
     .sort(
       (a, b) =>

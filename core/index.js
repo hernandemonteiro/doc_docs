@@ -1,10 +1,7 @@
 import { readDirs, readNavDir } from "./readDir";
 
-export function initialProps(RootElement) {
-  RootElement.getInitialProps = async () => {
-    const subDirs = await readDirs("./src/pages/docs/");
-    const dirs = await readNavDir("./src/pages/docs");
-    let pageProps = { subDirs: subDirs, dirs: dirs };
-    return pageProps;
-  };
+export function initialProps() {
+  const subDirs =  readDirs("./src/pages/docs/");
+  const dirs = readNavDir("./src/pages/docs");
+  return { subDirs: subDirs, dirs: dirs };
 }

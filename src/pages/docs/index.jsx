@@ -1,6 +1,5 @@
 import React from "react";
-import { ComponentDoc, DescriptionDoc, TitleDoc } from "../../../dist/components";
-import Code from "../../../dist/components/Docs/Code";
+import { ComponentDoc, DescriptionDoc, TitleDoc, Code } from "../../../dist/components";
 
 export default function HomeDocs() {
   return (

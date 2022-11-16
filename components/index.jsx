@@ -86,7 +86,7 @@ export function ComponentDoc(props) {
           </thead>
           <tbody>
             {props.options.map((element) => (
-              <tr>
+              <tr key={element}>
                 <td
                   style={{
                     border: "1px solid black",

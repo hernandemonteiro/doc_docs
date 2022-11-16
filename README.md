@@ -2,8 +2,6 @@
 
 doc_docs is for NextJS projects, he use the file routing method of NextJS to create a custom documentation.
 
-### HOW TO INSTALL
-
 ```
 npm i doc_docs
 ```
@@ -25,8 +23,8 @@ npm i doc_docs
 
 > `ComponentDoc:`
 
->`Code:`
+> `Code:`
 
->`DescriptionDoc:`
+> `DescriptionDoc:`
 
 ### THEMES

@@ -12,59 +12,66 @@ export default function MenuReactDocs(props) {
         borderRight: "1px solid rgba(0,0,0,0.5)",
       }}
     >
-      <PrimaryElementMenu
-        path={"/docs"}
-        name={"GETTING STARTED!"}
-      />
+      <PrimaryElementMenu path={"/docs"} name={"GETTING STARTED!"} />
 
-      {props.dirs.map((dir) => (
-        <div key={dir}>
-          {subDirsIsFileOrObject(props.subDirs[dir]) > 1 ? (
-            <>
-              <hr />
-              <details>
-                <summary
-                  style={{
-                    margin: "5%",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    color: "black",
-                  }}
-                >
-                  {dir.toUpperCase()}
-                </summary>
+      {props.dirs
+        .filter((dir) => dir != "options")
+        .filter((dir) => dir != "langs")
+        .map((dir) => {
+          return (
+            <div key={dir}>
+              {subDirsIsFileOrObject(props.subDirs[dir]) > 1 ? (
                 <>
-                  {Object.keys(props.subDirs[dir]).map((elementSub) => {
-                    return elementSub === "index.tsx" ||
-                      elementSub === "index.jsx" ? (
-                      <PrimaryElementMenu
-                        key={elementSub}
-                        path={`/docs/${dir}`}
-                        name={"INTRO"}
-                      />
-                    ) : (
-                      <PrimaryElementMenu
-                        key={elementSub}
-                        path={`/docs/${dir}/${elementSub}`}
-                        name={removeExtensionAndFormateName(elementSub)}
-                      />
-                    );
-                  })}
+                  <hr />
+                  <details>
+                    <summary
+                      style={{
+                        margin: "5%",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        color: "black",
+                      }}
+                    >
+                      {dir.toUpperCase()}
+                    </summary>
+                    <>
+                      {Object.keys(props.subDirs[dir])
+                        .filter(
+                          (element) =>
+                            element != "[options]" || element != "[langs]"
+                        )
+                        .map((elementSub) => {
+                          return elementSub === "index.tsx" ||
+                            elementSub === "index.jsx" ? (
+                            <PrimaryElementMenu
+                              key={elementSub}
+                              path={`/docs/${dir}`}
+                              name={"INTRO"}
+                            />
+                          ) : (
+                            <PrimaryElementMenu
+                              key={elementSub}
+                              path={`/docs/${dir}/${elementSub}`}
+                              name={removeExtensionAndFormateName(elementSub)}
+                            />
+                          );
+                        })}
+                    </>
+                  </details>
+                  <hr />
                 </>
-              </details>
-              <hr />
-            </>
-          ) : dir.match("index") ? (
-            ""
-          ) : (
-            <PrimaryElementMenu
-              path={`/docs/${dir}`}
-              name={removeExtensionAndFormateName(dir)}
-              margin={"5%"}
-            />
-          )}
-        </div>
-      ))}
+              ) : dir.match("index") ? (
+                ""
+              ) : (
+                <PrimaryElementMenu
+                  path={`/docs/${dir}`}
+                  name={removeExtensionAndFormateName(dir)}
+                  margin={"5%"}
+                />
+              )}
+            </div>
+          );
+        })}
     </nav>
   );
 }

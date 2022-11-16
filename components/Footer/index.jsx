@@ -9,6 +9,7 @@ export default function FooterReactDocs(props) {
         backgroundColor: "#3d3333" || "#070708",
         width: "100%",
         textAlign: "center",
+        zIndex: 1,
         padding: "2%",
         borderTop: "2px solid rgba(0,0,0,0.5)",
       }}

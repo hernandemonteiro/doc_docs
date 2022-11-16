@@ -91,7 +91,9 @@ function ComponentDoc(props) {
       padding: "1%"
     }
   }, "Accept"))), /*#__PURE__*/_react["default"].createElement("tbody", null, props.options.map(function (element) {
-    return /*#__PURE__*/_react["default"].createElement("tr", null, /*#__PURE__*/_react["default"].createElement("td", {
+    return /*#__PURE__*/_react["default"].createElement("tr", {
+      key: element
+    }, /*#__PURE__*/_react["default"].createElement("td", {
       style: {
         border: "1px solid black",
         padding: "1%",
