@@ -26,5 +26,3 @@ npm i doc_docs
 > `Code:`
 
 > `DescriptionDoc:`
-
-### THEMES
