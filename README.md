@@ -10,7 +10,7 @@ npm i doc_docs
 
 > #### `src:`
 >
-> your project needs a src folder with the "pages" of next js inside.
+> your project needs a src folder with the "pages" of nextJS inside.
 
 ### TO USE
 
