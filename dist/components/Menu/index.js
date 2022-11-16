@@ -19,7 +19,11 @@ function MenuReactDocs(props) {
   }, /*#__PURE__*/_react["default"].createElement(_PrimaryElementMenu["default"], {
     path: "/docs",
     name: "GETTING STARTED!"
-  }), props.dirs.map(function (dir) {
+  }), props.dirs.filter(function (dir) {
+    return dir != "options";
+  }).filter(function (dir) {
+    return dir != "langs";
+  }).map(function (dir) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: dir
     }, subDirsIsFileOrObject(props.subDirs[dir]) > 1 ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement("details", null, /*#__PURE__*/_react["default"].createElement("summary", {
@@ -29,7 +33,9 @@ function MenuReactDocs(props) {
         cursor: "pointer",
         color: "black"
       }
-    }, dir.toUpperCase()), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, Object.keys(props.subDirs[dir]).map(function (elementSub) {
+    }, dir.toUpperCase()), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, Object.keys(props.subDirs[dir]).filter(function (element) {
+      return element != "[options]" || element != "[langs]";
+    }).map(function (elementSub) {
       return elementSub === "index.tsx" || elementSub === "index.jsx" ? /*#__PURE__*/_react["default"].createElement(_PrimaryElementMenu["default"], {
         key: elementSub,
         path: "/docs/".concat(dir),

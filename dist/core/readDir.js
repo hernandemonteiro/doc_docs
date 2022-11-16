@@ -1,20 +1,22 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.readDirs = readDirs;
 exports.readNavDir = readNavDir;
-var _fs = _interopRequireDefault(require("fs"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var fs = _interopRequireWildcard(require("fs"));
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function readNavDir(dir) {
   var structSubDirs = {};
-  _fs["default"].readdirSync(dir).sort(function (a, b) {
-    return _fs["default"].statSync(dir + "/" + a).mtime.getTime() - _fs["default"].statSync(dir + "/" + b).mtime.getTime();
+  fs.readdirSync(dir).sort(function (a, b) {
+    return fs.statSync(dir + "/" + a).mtime.getTime() - fs.statSync(dir + "/" + b).mtime.getTime();
   }).forEach(function (file) {
-    if (_fs["default"].lstatSync(dir + "/" + file).isFile()) {
+    if (fs.lstatSync(dir + "/" + file).isFile()) {
       structSubDirs[file] = null;
-    } else if (_fs["default"].lstatSync(dir + "/" + file).isDirectory()) {
+    } else if (fs.lstatSync(dir + "/" + file).isDirectory()) {
       structSubDirs[file] = readDirs(dir + "/" + file);
     }
   });
@@ -26,12 +28,12 @@ function readNavDir(dir) {
 }
 function readDirs(dir) {
   var struct = {};
-  _fs["default"].readdirSync(dir).sort(function (a, b) {
-    return _fs["default"].statSync(dir + "/" + a).mtime.getTime() - _fs["default"].statSync(dir + "/" + b).mtime.getTime();
+  fs.readdirSync(dir).sort(function (a, b) {
+    return fs.statSync(dir + "/" + a).mtime.getTime() - fs.statSync(dir + "/" + b).mtime.getTime();
   }).forEach(function (file) {
-    if (_fs["default"].lstatSync(dir + "/" + file).isFile()) {
+    if (fs.lstatSync(dir + "/" + file).isFile()) {
       struct[file] = null;
-    } else if (_fs["default"].lstatSync(dir + "/" + file).isDirectory()) {
+    } else if (fs.lstatSync(dir + "/" + file).isDirectory()) {
       struct[file] = readDirs(dir + "/" + file);
     }
   });

@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = HeaderNextDocs;
 var _react = _interopRequireDefault(require("react"));
-var _store = _interopRequireDefault(require("store2"));
 var _ai = require("react-icons/ai");
 var _fa = require("react-icons/fa");
 var _go = require("react-icons/go");

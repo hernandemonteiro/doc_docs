@@ -8,8 +8,8 @@ var _react = _interopRequireDefault(require("react"));
 var _highlight = _interopRequireDefault(require("highlight.js"));
 var _javascript = _interopRequireDefault(require("highlight.js/lib/languages/javascript"));
 var _typescript = _interopRequireDefault(require("highlight.js/lib/languages/typescript"));
-require("highlight.js/styles/github-dark.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+// import "highlight.js/styles/github-dark.css";
 _highlight["default"].registerLanguage("javascript", _javascript["default"]);
 _highlight["default"].registerLanguage("typescript", _typescript["default"]);
 function Code(props) {
@@ -18,11 +18,16 @@ function Code(props) {
   }, 300);
   return /*#__PURE__*/_react["default"].createElement("pre", {
     style: {
+      backgroundColor: "black",
+      borderRadius: "7px",
+      padding: "2%",
       margin: "1%"
     }
   }, /*#__PURE__*/_react["default"].createElement("code", {
     style: {
-      borderRadius: "7px"
+      color: "white",
+      fontSize: "1.2em",
+      fontWeight: "bold"
     },
     className: props.language
   }, "".concat(props.code)));

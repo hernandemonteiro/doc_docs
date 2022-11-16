@@ -1,0 +1,44 @@
+{
+  "name": "doc_docs",
+  "version": "1.2.1",
+  "description": "lib for use nextjs to create intern software documentation",
+  "main": "./index.js",
+  "module": "./index.js",
+  "author": "Hernande Monteiro",
+  "license": "MIT",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
+  "scripts": {
+    "test": "webpack serve --progress --inline --hot --port 8080",
+    "packageBuild": "cross-env NODE_ENV=production babel . --out-dir dist",
+    "build": "next build",
+    "compile": "tsc",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "browserify-fs": "^1.0.0",
+    "fs": "^0.0.1-security",
+    "highlight.js": "^11.6.0",
+    "next": "12.3.0",
+    "react-icons": "4.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}

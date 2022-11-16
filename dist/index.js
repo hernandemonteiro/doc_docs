@@ -9,6 +9,9 @@ var _Template = _interopRequireDefault(require("./components/Template"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function ComponentOrDocs(props) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.route.match("/docs") ? /*#__PURE__*/_react["default"].createElement(_Template["default"], {
+    style: {
+      maxWidth: "100vw"
+    },
     dirs: props.dirs,
     subDirs: props.subDirs,
     projectLogo: props.projectLogo,
