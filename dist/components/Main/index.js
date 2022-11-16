@@ -12,8 +12,8 @@ function MainReactDocs(props) {
     style: {
       display: "flex",
       width: "100%",
-      height: "92vh",
-      zIndex: 1,
+      height: "100%",
+      marginBottom: "7%",
       backgroundColor: "white" || "#0e0f12"
     }
   }, props.disabledIndexMenu === true ? "" : /*#__PURE__*/_react["default"].createElement(_Menu["default"], {
@@ -22,8 +22,7 @@ function MainReactDocs(props) {
   }), /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       width: props.disabledIndexMenu === true ? "100%" : "77%",
-      minHeight: "90vh",
-      overflow: "auto",
+      height: "100%",
       padding: "2%"
     }
   }, props.children));
