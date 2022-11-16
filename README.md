@@ -16,7 +16,7 @@ npm i doc_docs
 
 ### PREBUILT COMPONENTS
 
-> import from `"doc_docs/dist/components/${name_of_component}"`
+> import from `"doc_docs/components"`
 
 > `TitleDoc:`
 > a prebuilt title for the docs!
