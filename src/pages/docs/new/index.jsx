@@ -1,5 +1,5 @@
 import React from "react";
-import { DescriptionDoc, TitleDoc } from "../../../../dist/components";
+import { DescriptionDoc, TitleDoc } from "../../../components";
 
 export default function newSubDocs() {
   return (

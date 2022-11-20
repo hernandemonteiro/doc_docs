@@ -7,6 +7,9 @@ exports["default"] = MenuReactDocs;
 var _react = _interopRequireDefault(require("react"));
 var _PrimaryElementMenu = _interopRequireDefault(require("./PrimaryElementMenu"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+// import { initialProps } from "../../core";
+
+// const config = initialProps();
 function MenuReactDocs(props) {
   return /*#__PURE__*/_react["default"].createElement("nav", {
     style: {
@@ -19,23 +22,21 @@ function MenuReactDocs(props) {
   }, /*#__PURE__*/_react["default"].createElement(_PrimaryElementMenu["default"], {
     path: "/docs",
     name: "GETTING STARTED!"
-  }), props.dirs.filter(function (dir) {
-    return dir != "options";
+  }), props.configDirs.dirs.filter(function (dir) {
+    return dir != "[options]";
   }).filter(function (dir) {
-    return dir != "langs";
+    return dir != "[langs]";
   }).map(function (dir) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: dir
-    }, subDirsIsFileOrObject(props.subDirs[dir]) > 1 ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement("details", null, /*#__PURE__*/_react["default"].createElement("summary", {
+    }, subDirsIsFileOrObject(props.configDirs.subDirs[dir]) > 1 ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement("details", null, /*#__PURE__*/_react["default"].createElement("summary", {
       style: {
         margin: "5%",
         fontWeight: "bold",
         cursor: "pointer",
         color: "black"
       }
-    }, dir.toUpperCase()), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, Object.keys(props.subDirs[dir]).filter(function (element) {
-      return element != "[options]" || element != "[langs]";
-    }).map(function (elementSub) {
+    }, dir.toUpperCase()), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, Object.keys(props.configDirs.subDirs[dir]).map(function (elementSub) {
       return elementSub === "index.tsx" || elementSub === "index.jsx" ? /*#__PURE__*/_react["default"].createElement(_PrimaryElementMenu["default"], {
         key: elementSub,
         path: "/docs/".concat(dir),

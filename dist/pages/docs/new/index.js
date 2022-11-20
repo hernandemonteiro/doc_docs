@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = newSubDocs;
 var _react = _interopRequireDefault(require("react"));
-var _components = require("../../../../dist/components");
+var _components = require("../../../components");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function newSubDocs() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_components.TitleDoc, {

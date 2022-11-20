@@ -5,12 +5,7 @@ import MainReactDocs from "../Main";
 
 export default function TemplateReactDocs(props) {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100vh",
-      }}
-    >
+    <>
       <HeaderNextDocs
         logo={props.projectLogo}
         customHeader={props.customHeader}
@@ -22,13 +17,12 @@ export default function TemplateReactDocs(props) {
         website={props.website}
       />
       <MainReactDocs
-        dirs={props.dirs}
-        subDirs={props.subDirs}
         disabledIndexMenu={props.disabledIndexMenu}
+        configDirs={props.configDirs}
       >
         {props.children}
       </MainReactDocs>
       <FooterReactDocs customFooter={props.customFooter} />
-    </div>
+    </>
   );
 }

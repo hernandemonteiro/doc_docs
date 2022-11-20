@@ -10,12 +10,7 @@ var _Header = _interopRequireDefault(require("../Header"));
 var _Main = _interopRequireDefault(require("../Main"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function TemplateReactDocs(props) {
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    style: {
-      width: "100%",
-      height: "100vh"
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_Header["default"], {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Header["default"], {
     logo: props.projectLogo,
     customHeader: props.customHeader,
     github: props.github,
@@ -25,9 +20,8 @@ function TemplateReactDocs(props) {
     discord: props.discord,
     website: props.website
   }), /*#__PURE__*/_react["default"].createElement(_Main["default"], {
-    dirs: props.dirs,
-    subDirs: props.subDirs,
-    disabledIndexMenu: props.disabledIndexMenu
+    disabledIndexMenu: props.disabledIndexMenu,
+    configDirs: props.configDirs
   }, props.children), /*#__PURE__*/_react["default"].createElement(_Footer["default"], {
     customFooter: props.customFooter
   }));

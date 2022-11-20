@@ -9,18 +9,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function FooterReactDocs(props) {
   return props.customFooter ? props.customFooter : /*#__PURE__*/_react["default"].createElement("footer", {
     style: {
+      display: "flex",
+      alignItems: "center",
       backgroundColor: "#3d3333" || "#070708",
       width: "100%",
-      textAlign: "center",
-      zIndex: 1,
-      padding: "2%",
+      height: "100px",
       borderTop: "2px solid rgba(0,0,0,0.5)"
     }
   }, /*#__PURE__*/_react["default"].createElement("p", {
     style: {
-      color: "white"
+      width: "100%",
+      color: "white",
+      textAlign: "center"
     }
-  }, "Designed with ", /*#__PURE__*/_react["default"].createElement("b", null, "NextDocs"), ", created by", " ", /*#__PURE__*/_react["default"].createElement("a", {
+  }, "Designed with ", /*#__PURE__*/_react["default"].createElement("b", null, "doc_docs"), ", created by", " ", /*#__PURE__*/_react["default"].createElement("a", {
     style: {
       color: "white"
     },
