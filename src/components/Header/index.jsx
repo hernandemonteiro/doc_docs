@@ -16,31 +16,25 @@ export default function HeaderNextDocs(props) {
     <header
       style={{
         display: "flex",
-        // criar lógica paa mudar de cor conforme theme
         backgroundColor: "#3d3333" || "#070708",
         width: "100%",
+        height: "100px",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "2%",
         borderBottom: "1px solid rgba(0,0,0,0.3)",
       }}
     >
-      <div
+      <a
+        href={"/docs"}
         style={{
-          width: "50%",
+          color: "white",
+          textTransform: "uppercase",
+          textDecoration: "none",
+          marginLeft: "2%"
         }}
       >
-        <a
-          href={"/docs"}
-          style={{
-            color: "white",
-            textTransform: "uppercase",
-            textDecoration: "none"
-          }}
-        >
-          {props.logo || "Your app name!"}
-        </a>
-      </div>
+        {props.logo || "Your app name!"}
+      </a>
 
       <div
         style={{
@@ -48,6 +42,7 @@ export default function HeaderNextDocs(props) {
           textAlign: "right",
           color: "white",
           fontSize: "1.5em",
+          marginRight: "2%"
         }}
       >
         {/* definir método para trocar dark light */}
@@ -70,32 +65,62 @@ export default function HeaderNextDocs(props) {
           />
         )} */}
         {props.github && (
-          <a href={props.github} style={{color: "white"}} target="_blank" rel="noreferrer">
+          <a
+            href={props.github}
+            style={{ color: "white" }}
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillGithub style={{ margin: "1%" }} />
           </a>
         )}
         {props.facebook && (
-          <a href={props.facebook}  style={{color: "white"}} target="_blank" rel="noreferrer">
+          <a
+            href={props.facebook}
+            style={{ color: "white" }}
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillFacebook style={{ margin: "1%" }} />
           </a>
         )}
         {props.instagram && (
-          <a href={props.instagram}  style={{color: "white"}} target="_blank" rel="noreferrer">
+          <a
+            href={props.instagram}
+            style={{ color: "white" }}
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillInstagram style={{ margin: "1%" }} />
           </a>
         )}
         {props.linkedin && (
-          <a href={props.linkedin}  style={{color: "white"}} target="_blank" rel="noreferrer">
+          <a
+            href={props.linkedin}
+            style={{ color: "white" }}
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillLinkedin style={{ margin: "1%" }} />
           </a>
         )}
         {props.discord && (
-          <a href={props.discord}  style={{color: "white"}} target="_blank" rel="noreferrer">
+          <a
+            href={props.discord}
+            style={{ color: "white" }}
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaDiscord style={{ margin: "1%" }} />
           </a>
         )}
         {props.website && (
-          <a href={props.website}  style={{color: "white"}} target="_blank" rel="noreferrer">
+          <a
+            href={props.website}
+            style={{ color: "white" }}
+            target="_blank"
+            rel="noreferrer"
+          >
             <GoBrowser style={{ margin: "1%" }} />
           </a>
         )}

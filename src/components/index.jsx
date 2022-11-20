@@ -1,13 +1,6 @@
 import React from "react";
-import hljs from "highlight.js";
-import javascript from "highlight.js/lib/languages/javascript";
-import typescript from "highlight.js/lib/languages/typescript";
-hljs.registerLanguage("javascript", javascript);
-hljs.registerLanguage("typescript", typescript);
 
 export function Code(props) {
-  setTimeout(() => hljs.highlightAll(), 300);
-
   return (
     <pre
       style={{
@@ -107,7 +100,9 @@ export function ComponentDoc(props) {
           </tbody>
         </table>
       )}
-      <p style={{ padding: "2%" }}>{props.description}</p>
+      {props.description && (
+        <p style={{ padding: "2%" }}>{props.description}</p>
+      )}
     </div>
   );
 }

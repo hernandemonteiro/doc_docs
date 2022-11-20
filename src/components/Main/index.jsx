@@ -7,7 +7,7 @@ export default function MainReactDocs(props) {
       style={{
         display: "flex",
         width: "100%",
-        height: "100%",
+        minHeight: "85vh",
         marginBottom: "7%",
         backgroundColor: "white" || "#0e0f12",
       }}
@@ -15,7 +15,7 @@ export default function MainReactDocs(props) {
       {props.disabledIndexMenu === true ? (
         ""
       ) : (
-        <MenuReactDocs subDirs={props.subDirs} dirs={props.dirs} />
+        <MenuReactDocs configDirs={props.configDirs} />
       )}
       <div
         style={{

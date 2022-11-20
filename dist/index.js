@@ -6,16 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = ComponentOrDocs;
 var _react = _interopRequireDefault(require("react"));
 var _Template = _interopRequireDefault(require("./components/Template"));
-var _core = require("./core");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var config = (0, _core.initialProps)();
 function ComponentOrDocs(props) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.route.route.match("/docs") ? /*#__PURE__*/_react["default"].createElement(_Template["default"], {
-    style: {
-      maxWidth: "100vw"
-    },
-    dirs: config.dirs,
-    subDirs: config.subDirs,
+    configDirs: props.configDirs,
     projectLogo: props.projectLogo,
     disabledIndexMenu: props.disabledIndexMenu,
     customFooter: props.customFooter,

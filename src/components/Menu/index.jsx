@@ -1,6 +1,8 @@
 import React from "react";
 import PrimaryElementMenu from "./PrimaryElementMenu";
+// import { initialProps } from "../../core";
 
+// const config = initialProps();
 export default function MenuReactDocs(props) {
   return (
     <nav
@@ -14,13 +16,13 @@ export default function MenuReactDocs(props) {
     >
       <PrimaryElementMenu path={"/docs"} name={"GETTING STARTED!"} />
 
-      {props.dirs
-        .filter((dir) => dir != "options")
-        .filter((dir) => dir != "langs")
+      {props.configDirs.dirs
+        .filter((dir) => dir != "[options]")
+        .filter((dir) => dir != "[langs]")
         .map((dir) => {
           return (
             <div key={dir}>
-              {subDirsIsFileOrObject(props.subDirs[dir]) > 1 ? (
+              {subDirsIsFileOrObject(props.configDirs.subDirs[dir]) > 1 ? (
                 <>
                   <hr />
                   <details>
@@ -35,27 +37,23 @@ export default function MenuReactDocs(props) {
                       {dir.toUpperCase()}
                     </summary>
                     <>
-                      {Object.keys(props.subDirs[dir])
-                        .filter(
-                          (element) =>
-                            element != "[options]" || element != "[langs]"
-                        )
-                        .map((elementSub) => {
-                          return elementSub === "index.tsx" ||
-                            elementSub === "index.jsx" ? (
-                            <PrimaryElementMenu
-                              key={elementSub}
-                              path={`/docs/${dir}`}
-                              name={"INTRO"}
-                            />
-                          ) : (
-                            <PrimaryElementMenu
-                              key={elementSub}
-                              path={`/docs/${dir}/${elementSub}`}
-                              name={removeExtensionAndFormateName(elementSub)}
-                            />
-                          );
-                        })}
+                      {Object.keys(props.configDirs.subDirs[dir])
+                      .map((elementSub) => {
+                        return elementSub === "index.tsx" ||
+                          elementSub === "index.jsx" ? (
+                          <PrimaryElementMenu
+                            key={elementSub}
+                            path={`/docs/${dir}`}
+                            name={"INTRO"}
+                          />
+                        ) : (
+                          <PrimaryElementMenu
+                            key={elementSub}
+                            path={`/docs/${dir}/${elementSub}`}
+                            name={removeExtensionAndFormateName(elementSub)}
+                          />
+                        );
+                      })}
                     </>
                   </details>
                   <hr />

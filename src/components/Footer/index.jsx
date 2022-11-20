@@ -6,16 +6,16 @@ export default function FooterReactDocs(props) {
   ) : (
     <footer
       style={{
+        display: "flex",
+        alignItems: "center",
         backgroundColor: "#3d3333" || "#070708",
         width: "100%",
-        textAlign: "center",
-        zIndex: 1,
-        padding: "2%",
+        height: "100px",
         borderTop: "2px solid rgba(0,0,0,0.5)",
       }}
     >
-      <p style={{ color: "white" }}>
-        Designed with <b>NextDocs</b>, created by{" "}
+      <p style={{ width: "100%", color: "white", textAlign: "center" }}>
+        Designed with <b>doc_docs</b>, created by{" "}
         <a
           style={{ color: "white" }}
           target="_blank"

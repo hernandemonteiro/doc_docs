@@ -14,31 +14,28 @@ function HeaderNextDocs(props) {
   return props.customHeader ? props.customHeader : /*#__PURE__*/_react["default"].createElement("header", {
     style: {
       display: "flex",
-      // criar lógica paa mudar de cor conforme theme
       backgroundColor: "#3d3333" || "#070708",
       width: "100%",
+      height: "100px",
       alignItems: "center",
       justifyContent: "space-between",
-      padding: "2%",
       borderBottom: "1px solid rgba(0,0,0,0.3)"
-    }
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    style: {
-      width: "50%"
     }
   }, /*#__PURE__*/_react["default"].createElement("a", {
     href: "/docs",
     style: {
       color: "white",
       textTransform: "uppercase",
-      textDecoration: "none"
+      textDecoration: "none",
+      marginLeft: "2%"
     }
-  }, props.logo || "Your app name!")), /*#__PURE__*/_react["default"].createElement("div", {
+  }, props.logo || "Your app name!"), /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       width: "50%",
       textAlign: "right",
       color: "white",
-      fontSize: "1.5em"
+      fontSize: "1.5em",
+      marginRight: "2%"
     }
   }, props.github && /*#__PURE__*/_react["default"].createElement("a", {
     href: props.github,

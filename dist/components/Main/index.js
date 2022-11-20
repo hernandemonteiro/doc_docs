@@ -12,13 +12,12 @@ function MainReactDocs(props) {
     style: {
       display: "flex",
       width: "100%",
-      height: "100%",
+      minHeight: "85vh",
       marginBottom: "7%",
       backgroundColor: "white" || "#0e0f12"
     }
   }, props.disabledIndexMenu === true ? "" : /*#__PURE__*/_react["default"].createElement(_Menu["default"], {
-    subDirs: props.subDirs,
-    dirs: props.dirs
+    configDirs: props.configDirs
   }), /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       width: props.disabledIndexMenu === true ? "100%" : "77%",
