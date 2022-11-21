@@ -1,8 +1,6 @@
 import React from "react";
 import PrimaryElementMenu from "./PrimaryElementMenu";
-// import { initialProps } from "../../core";
 
-// const config = initialProps();
 export default function MenuReactDocs(props) {
   return (
     <nav

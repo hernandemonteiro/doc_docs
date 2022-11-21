@@ -20,7 +20,7 @@ export default function FooterReactDocs(props) {
           style={{ color: "white" }}
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/hernandemonteiro"
+          href="https://github.com/hernandemonteiro/doc_docs"
         >
           Hernande Monteiro
         </a>

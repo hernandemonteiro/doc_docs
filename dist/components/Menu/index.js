@@ -7,9 +7,6 @@ exports["default"] = MenuReactDocs;
 var _react = _interopRequireDefault(require("react"));
 var _PrimaryElementMenu = _interopRequireDefault(require("./PrimaryElementMenu"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-// import { initialProps } from "../../core";
-
-// const config = initialProps();
 function MenuReactDocs(props) {
   return /*#__PURE__*/_react["default"].createElement("nav", {
     style: {

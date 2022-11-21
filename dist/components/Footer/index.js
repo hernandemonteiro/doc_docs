@@ -28,6 +28,6 @@ function FooterReactDocs(props) {
     },
     target: "_blank",
     rel: "noreferrer",
-    href: "https://github.com/hernandemonteiro"
+    href: "https://github.com/hernandemonteiro/doc_docs"
   }, "Hernande Monteiro")));
 }

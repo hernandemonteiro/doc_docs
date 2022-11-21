@@ -8,7 +8,6 @@ export default function MainReactDocs(props) {
         display: "flex",
         width: "100%",
         minHeight: "85vh",
-        marginBottom: "7%",
         backgroundColor: "white" || "#0e0f12",
       }}
     >
@@ -22,6 +21,7 @@ export default function MainReactDocs(props) {
           width: props.disabledIndexMenu === true ? "100%" : "77%",
           height: "100%",
           padding: "2%",
+          marginBottom: "7%",
         }}
       >
         {props.children}

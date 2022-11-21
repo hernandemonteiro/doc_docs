@@ -8,11 +8,7 @@ const config = {
     filename: "index.js",
   },
 
-  resolve: { extensions: [".js", ".json", ".jsx", ".css"] },
-  globalObject: "this",
-  node: {
-    fs: 'empty'
-  },
+  resolve: { extensions: [".js", ".json", ".jsx"] },
   module: {
     rules: [
       { test: /\.(js)x?$/, loader: "babel-loader", exclude: /node_modules/ },
