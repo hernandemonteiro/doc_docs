@@ -1,6 +1,5 @@
 import React from "react";
-import ComponentOrDocs from "../index";
-import { initialProps } from "../core";
+import ComponentOrDocs, { initialProps }  from "../index";
 
 function MyApp({ Component, pageProps, router, dirs }) {
   return (
