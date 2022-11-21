@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -14,19 +14,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to{" "}
-          <a href="https://github.com/hernandemonteiro/doc_docs">doc_docs</a>{" "}
-          For NextJS!
-        </h1>
+        <h1 className={styles.title}>Welcome to doc_docs For NextJS!</h1>
         <div className={styles.grid}>
-          <a href="https://doc-docs.vercel.app/docs" className={styles.card}>
+          <Link href="https://doc-docs.vercel.app/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about doc_docs.</p>
-          </a>
+          </Link>
           <a
             href="https://github.com/hernandemonteiro/doc_docs"
             className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <h2>Github &rarr;</h2>
             <p>Discover and contribute to doc_docs project.</p>
