@@ -2,7 +2,9 @@ import React from "react";
 import "../styles/globals.css";
 import ComponentOrDocs, { initialProps } from "doc_docs";
 
-function MyApp({ Component, pageProps, router, dirs }) {
+const dirs = initialProps();
+
+function MyApp({ Component, pageProps, router }) {
   return (
     <ComponentOrDocs
       route={router}
@@ -14,12 +16,12 @@ function MyApp({ Component, pageProps, router, dirs }) {
   );
 }
 
-MyApp.getInitialProps = async () => {
-  const dirs = await initialProps();
+// MyApp.getInitialProps = async () => {
+//   const dirs = await initialProps();
 
-  return {
-    dirs,
-  };
-};
+//   return {
+//     dirs,
+//   };
+// };
 
 export default MyApp;
