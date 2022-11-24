@@ -1,10 +1,13 @@
 import React from "react";
-import ComponentOrDocs, { initialProps }  from "../index";
+import ComponentOrDocs, { initialProps } from "../index";
 
-function MyApp({ Component, pageProps, router, dirs }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <ComponentOrDocs
-      configDirs={dirs}
+      configDirs={{
+        dirs: ["components", "api", "env"],
+        subDirs: { api: ["user", "auth"] },
+      }}
       Component={Component}
       pageProps={pageProps}
       route={router}
@@ -15,12 +18,5 @@ function MyApp({ Component, pageProps, router, dirs }) {
     />
   );
 }
-
-MyApp.getInitialProps = async () => {
-  const dirs = await initialProps();
-  return {
-    dirs,
-  };
-};
 
 export default MyApp;

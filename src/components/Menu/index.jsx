@@ -35,8 +35,7 @@ export default function MenuReactDocs(props) {
                       {dir.toUpperCase()}
                     </summary>
                     <>
-                      {Object.keys(props.configDirs.subDirs[dir])
-                      .map((elementSub) => {
+                      {props.configDirs.subDirs[dir].map((elementSub) => {
                         return elementSub === "index.tsx" ||
                           elementSub === "index.jsx" ? (
                           <PrimaryElementMenu

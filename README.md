@@ -6,12 +6,6 @@ doc_docs is for NextJS projects, he use the file routing method of NextJS to cre
 npm i doc_docs
 ```
 
-### RULES
-
-> #### `src:`
->
-> your project needs a src folder with the "pages" of nextJS inside.
-
 ### TO USE
 
 ### PREBUILT COMPONENTS
