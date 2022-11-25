@@ -100,8 +100,9 @@ export default function MenuReactDocs(props) {
                           {props.configDirs.subDirs[dir].map((elementSub) => {
                             return elementSub === "index.tsx" ||
                               elementSub === "index.jsx" ? (
-                              <PrimaryElementMenuWithoutLink
+                              <PrimaryElementMenu
                                 key={elementSub}
+                                path={`/docs/${dir}`}
                                 name={"INTRO"}
                               />
                             ) : (
