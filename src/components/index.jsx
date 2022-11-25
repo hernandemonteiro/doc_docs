@@ -1,5 +1,5 @@
+import Head from "next/head";
 import React, { useContext } from "react";
-import styles from "./Components.module.css";
 import ColorContext from "../provider/ColorContext";
 
 export function Code(props) {
@@ -41,7 +41,20 @@ export function DescriptionDoc(props) {
 }
 
 export function TitleDoc(props) {
-  return <h1 className={styles.TitleDoc}>{props.title}</h1>;
+  return (
+    <>
+      <Head>
+        <style jsx>{`
+          .TitleDoc {
+            margin: 4% 0 4%;
+            font-size: 1.4rem;
+            border-bottom: 1px solid gray;
+          }
+        `}</style>
+      </Head>
+      <h1 className={"TitleDoc"}>{props.title}</h1>
+    </>
+  );
 }
 
 export function ComponentDoc(props) {
@@ -51,6 +64,18 @@ export function ComponentDoc(props) {
       className="elementDescription"
       style={{ margin: "1%", border: "0.5px solid gray", borderRadius: "7px" }}
     >
+      <Head>
+        <style jsx>{`
+          .td {
+            border: 1px solid black;
+            padding: 1%;
+          }
+
+          .td[data-theme="dark"] {
+            border: 1px solid gray;
+          }
+        `}</style>
+      </Head>
       <div
         style={{
           display: "flex",
@@ -66,13 +91,13 @@ export function ComponentDoc(props) {
         <table style={{ width: "100%", textAlign: "center", padding: "2%" }}>
           <thead>
             <tr>
-              <th className={styles.td} data-theme={theme}>
+              <th className={"td"} data-theme={theme}>
                 Prop
               </th>
-              <th className={styles.td} data-theme={theme}>
+              <th className={"td"} data-theme={theme}>
                 Default
               </th>
-              <th className={styles.td} data-theme={theme}>
+              <th className={"td"} data-theme={theme}>
                 Accept
               </th>
             </tr>
@@ -80,14 +105,14 @@ export function ComponentDoc(props) {
           <tbody>
             {props.options.map((element) => (
               <tr key={element.prop}>
-                <td className={styles.td} data-theme={theme}>
+                <td className={"td"} data-theme={theme}>
                   {element.prop}
                 </td>
-                <td className={styles.td} data-theme={theme}>
+                <td className={"td"} data-theme={theme}>
                   {element.default}
                 </td>
                 <td
-                  className={styles.td}
+                  className={"td"}
                   data-theme={theme}
                 >{`${element.accept}`}</td>
               </tr>
