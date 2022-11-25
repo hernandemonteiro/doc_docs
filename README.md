@@ -6,23 +6,173 @@ doc_docs is for NextJS projects, he use the file routing method of NextJS to cre
 npm i doc_docs
 ```
 
-### RULES
-
-> #### `src:`
->
-> your project needs a src folder with the "pages" of nextJS inside.
+<!-- <a style="font-size: 1.4rem" href="https://doc-docs.vercel.app/docs" target="_blank">Click here to acess the complete documentation</a> -->
 
 ### TO USE
 
+```
+import ComponentOrDocs from "doc_docs";
+```
+
+after init the basic configuration:
+
+- remove the `<Component {...pageProps} />` of `_app`;
+- add the `<ComponentOrDocs/>`;
+- add `router` to args function;
+- pass basic properties to component:
+
+```
+<ComponentOrDocs
+    Component={Component}
+    pageProps={pageProps}
+    route={router}/>
+```
+
+##### Example:
+
+```
+import React from "react";
+import ComponentOrDocs from "doc_docs";
+import "./_app.css";
+
+function MyApp({ Component, pageProps, router }) {
+  return (
+    <ComponentOrDocs
+      Component={Component}
+      pageProps={pageProps}
+      route={router}
+      configDirs={{
+        dirs: [ "api", "other_path"],
+        subDirs: { api: ["user", "auth"] },
+      }}
+    />
+  );
+}
+
+export default MyApp;
+```
+
+### CUSTOM LOGO
+
+to set a custom logo you can use `projectLogo` atribute;
+
+this atribute accept a JSX.Element or a String;
+
+##### Example:
+
+```
+import React from "react";
+import ComponentOrDocs from "doc_docs";
+import "./_app.css";
+
+function MyApp({ Component, pageProps, router }) {
+  return (
+    <ComponentOrDocs
+      Component={Component}
+      pageProps={pageProps}
+      route={router}
+      configDirs={{
+        dirs: [ "api", "other_path"],
+        subDirs: { api: ["user", "auth"] },
+      }}
+
+      projectLogo={your custom logo here}
+    />
+  );
+}
+
+export default MyApp;
+```
+
+### SOCIAL NETWORK
+
+to add header icons with your social networks you can
+use the principal component;
+
+You can set:
+
+- github;
+- website;
+- instagram;
+- linkedin;
+- discord;
+- facebook;
+
+##### Example:
+
+```
+import React from "react";
+import ComponentOrDocs from "doc_docs";
+import "./_app.css";
+
+function MyApp({ Component, pageProps, router }) {
+  return (
+    <ComponentOrDocs
+      Component={Component}
+      pageProps={pageProps}
+      route={router}
+      configDirs={{
+        dirs: [ "api", "other_path"],
+        subDirs: { api: ["user", "auth"] },
+      }}
+
+      // example social networks:
+
+      github="https://github.com/your_nickname"
+      website="https://your_website.com"
+      instagram="https://instagram.com/your_username"
+    />
+  );
+}
+
+export default MyApp;
+```
+
 ### PREBUILT COMPONENTS
 
-> import from `"doc_docs/components"`
+`import { name_of_component } from "doc_docs/components"`
 
-> `TitleDoc:`
-> a prebuilt title for the docs!
+##### Components:
 
-> `ComponentDoc:`
+`TitleDoc:`
 
-> `Code:`
+Title for page docs!
 
-> `DescriptionDoc:`
+```
+<TitleDoc title="Your Title" />
+```
+
+`ComponentDoc:`
+
+- `options` and `description` is optional;
+- `options` config a table with the component props;
+
+```
+ <ComponentDoc
+        background="grey"
+        element={<h1>Here you can expose Components</h1>}
+        options={[
+          { prop: "OnClick", default: "none", accept: "() => void" },
+          { prop: "children", default: "none", accept: "string" },
+        ]}
+        description={
+          "optional description for this"
+        }
+      />
+
+```
+
+`Code:`
+
+```
+<Code
+  language="name_of_language"
+  code={Your code here} />
+```
+
+`DescriptionDoc:`
+
+```
+<DescriptionDoc
+    description="this is a description example" />
+```
