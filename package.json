@@ -20,6 +20,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "next": "^13.0.3",
+    "nookies": "^2.5.2",
     "react-icons": "4.6.0"
   },
   "devDependencies": {

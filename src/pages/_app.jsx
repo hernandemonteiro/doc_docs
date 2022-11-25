@@ -1,11 +1,12 @@
 import React from "react";
-import ComponentOrDocs, { initialProps } from "../index";
+import ComponentOrDocs from "../index";
+import "./_app.css";
 
 function MyApp({ Component, pageProps, router }) {
   return (
     <ComponentOrDocs
       configDirs={{
-        dirs: ["components", "api", "env"],
+        dirs: [ "api", "env"],
         subDirs: { api: ["user", "auth"] },
       }}
       Component={Component}

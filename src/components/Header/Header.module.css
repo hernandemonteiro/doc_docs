@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  background-color: #3d3333;
+  width: 100%;
+  min-height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+}
+
+.header[data-theme="dark"] {
+  background-color: black;
+}
+
+.HeaderSocials {
+  width: 50%;
+  text-align: right;
+  color: white;
+  font-size: 1.5em;
+  margin-right: 2%;
+}
+
+.LogoHeader {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 2%;
+}
+
+@media (max-width: 800px) {
+  .HeaderSocials {
+    width: 100%;
+    text-align: center;
+    margin: 2%;
+  }
+
+  .LogoHeader {
+    width: 100%;
+    text-align: center;
+    margin: 4%;
+  }
+}

@@ -1,31 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import ColorContext from "../../provider/ColorContext";
 import MenuReactDocs from "../Menu";
+import styles from "./Main.module.css";
 
 export default function MainReactDocs(props) {
+  const { theme } = useContext(ColorContext);
   return (
-    <main
-      style={{
-        display: "flex",
-        width: "100%",
-        minHeight: "85vh",
-        backgroundColor: "white" || "#0e0f12",
-      }}
-    >
+    <main className={styles.Main} data-theme={theme}>
       {props.disabledIndexMenu === true ? (
         ""
       ) : (
         <MenuReactDocs configDirs={props.configDirs} />
       )}
-      <div
-        style={{
-          width: props.disabledIndexMenu === true ? "100%" : "77%",
-          height: "100%",
-          padding: "2%",
-          marginBottom: "7%",
-        }}
-      >
-        {props.children}
-      </div>
+      <div className={styles.ContentMain}>{props.children}</div>
     </main>
   );
 }

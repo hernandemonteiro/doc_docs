@@ -1,19 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import ColorContext from "../../provider/ColorContext";
+import styles from "./Footer.module.css";
 
 export default function FooterReactDocs(props) {
+  const { theme } = useContext(ColorContext);
+
   return props.customFooter ? (
     props.customFooter
   ) : (
-    <footer
-      style={{
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "#3d3333" || "#070708",
-        width: "100%",
-        height: "100px",
-        borderTop: "2px solid rgba(0,0,0,0.5)",
-      }}
-    >
+    <footer className={styles.Footer} data-theme={theme}>
       <p style={{ width: "100%", color: "white", textAlign: "center" }}>
         Designed with <b>doc_docs</b>, created by{" "}
         <a

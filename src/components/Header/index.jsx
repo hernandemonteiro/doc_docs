@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   AiFillGithub,
   AiFillFacebook,
@@ -8,62 +8,28 @@ import {
 import { FaDiscord } from "react-icons/fa";
 import { GoBrowser } from "react-icons/go";
 import { FiMoon, FiSun } from "react-icons/fi";
+import { setCookie, parseCookies } from "nookies";
+import styles from "./Header.module.css";
+import ColorContext from "../../provider/ColorContext";
 
 export default function HeaderNextDocs(props) {
+  const cookies = parseCookies();
+  const { theme, setTheme } = useContext(ColorContext);
+  useEffect(() => {
+    if (cookies.theme) {
+      setTheme(cookies.theme);
+    }
+  }, []);
+
   return props.customHeader ? (
     props.customHeader
   ) : (
-    <header
-      style={{
-        display: "flex",
-        backgroundColor: "#3d3333" || "#070708",
-        width: "100%",
-        height: "100px",
-        alignItems: "center",
-        justifyContent: "space-between",
-        borderBottom: "1px solid rgba(0,0,0,0.3)",
-      }}
-    >
-      <a
-        href={"/docs"}
-        style={{
-          color: "white",
-          textTransform: "uppercase",
-          textDecoration: "none",
-          marginLeft: "2%"
-        }}
-      >
+    <header className={styles.header} data-theme={theme}>
+      <a href={"/docs"} className={styles.LogoHeader}>
         {props.logo || "Your app name!"}
       </a>
 
-      <div
-        style={{
-          width: "50%",
-          textAlign: "right",
-          color: "white",
-          fontSize: "1.5em",
-          marginRight: "2%"
-        }}
-      >
-        {/* definir método para trocar dark light */}
-        {/* {store("theme") === true && (
-          <FiMoon
-            style={{ margin: "1%" }}
-            onClick={() => {
-              store("theme", false);
-              window.location.reload();
-            }}
-          />
-        )}
-        {store("theme") === false && (
-          <FiSun
-            style={{ margin: "1%" }}
-            onClick={() => {
-              store("theme", true);
-              window.location.reload();
-            }}
-          />
-        )} */}
+      <div className={styles.HeaderSocials}>
         {props.github && (
           <a
             href={props.github}
@@ -123,6 +89,24 @@ export default function HeaderNextDocs(props) {
           >
             <GoBrowser style={{ margin: "1%" }} />
           </a>
+        )}
+        {theme === "dark" && (
+          <FiMoon
+            style={{ margin: "1%", cursor: "pointer" }}
+            onClick={() => {
+              setTheme("light");
+              setCookie(null, "theme", "light");
+            }}
+          />
+        )}
+        {theme === "light" && (
+          <FiSun
+            style={{ margin: "1%", cursor: "pointer" }}
+            onClick={() => {
+              setTheme("dark");
+              setCookie(null, "theme", "dark");
+            }}
+          />
         )}
       </div>
     </header>

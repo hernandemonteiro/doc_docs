@@ -1,0 +1,26 @@
+.LinkMenu {
+  width: 100%;
+  color: black;
+  text-decoration: none;
+ 
+}
+
+.LinkMenu[data-theme="dark"] {
+  color: white;
+}
+
+.hrMargin {
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+@media (max-width: 800px) {
+  .LinkMenu {
+    text-align: center;
+  }
+
+  .hrMargin {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+}
