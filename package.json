@@ -1,6 +1,6 @@
 {
   "name": "doc_docs",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "lib for use nextjs to create intern software documentation",
   "main": "./index.js",
   "module": "./index.js",
