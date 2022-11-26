@@ -103,9 +103,9 @@ export default MyApp;
 
 ### CUSTOM LOGO
 
-to set a custom logo you can use `projectLogo` atribute;
+to set a custom logo you can use `projectLogo` attribute;
 
-this atribute accept a JSX.Element or a String;
+this attribute accept a JSX.Element or a String;
 
 ##### Example:
 
