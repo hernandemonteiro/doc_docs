@@ -1,14 +1,24 @@
-# DOC DOCS - NEXTJS DOCUMENTATION
-
+<h1 align="center">DOC DOCS - NEXTJS DOCUMENTATION</h1>
+<div align="center">
+<img style="width:70%" src="./website/public/Thesis-rafiki.png"/>
+</div>
+<hr>
+<p align="center">
 doc_docs is for NextJS projects, he use the file routing method of NextJS to create a custom documentation.
+</p>
+<hr>
+
+<!-- <a style="font-size: 1.4rem" href="https://doc-docs.vercel.app/docs" target="_blank">Click here to acess the complete documentation</a> -->
+
+### TO USE
+
+install the package:
 
 ```
 npm i doc_docs
 ```
 
-<!-- <a style="font-size: 1.4rem" href="https://doc-docs.vercel.app/docs" target="_blank">Click here to acess the complete documentation</a> -->
-
-### TO USE
+after:
 
 ```
 import ComponentOrDocs from "doc_docs";
