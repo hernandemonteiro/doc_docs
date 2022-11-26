@@ -2,9 +2,17 @@
   "name": "doc_docs",
   "version": "1.4.2",
   "description": "lib for use nextjs to create intern software documentation",
+  "readmeFilename": "./README.md",
   "main": "./index.js",
-  "module": "./index.js",
-  "author": "Hernande Monteiro",
+  "author": {
+    "name": "Hernande Monteiro",
+    "email": "monteiro1998@live.com",
+    "homepage": "https://hernandemonteiro.vercel.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hernandemonteiro/doc_docs"
+  },
   "license": "MIT",
   "browser": {
     "fs": false

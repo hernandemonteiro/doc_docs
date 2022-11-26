@@ -1,9 +1,9 @@
-import Image from "next/image";
 import React from "react";
-import ComponentOrDocs from "../index";
+import ComponentOrDocs from "../src/index";
 import "./_app.css";
 
 function MyApp({ Component, pageProps, router }) {
+  // page used for tests in development mode;
   return (
     <ComponentOrDocs
       configDirs={{
@@ -14,7 +14,13 @@ function MyApp({ Component, pageProps, router }) {
       pageProps={pageProps}
       route={router}
       projectLogo={
-        <div style={{ display: "flex", alignItems: "center", flexDirection: "row" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "row",
+          }}
+        >
           <img
             width={50}
             height={50}
