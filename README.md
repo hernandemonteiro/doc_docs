@@ -62,6 +62,45 @@ function MyApp({ Component, pageProps, router }) {
 export default MyApp;
 ```
 
+Now you can create a folder `docs` inside your folder `pages`;
+- inside the folder docs create a index file.
+Just it... your doc_docs is done!
+
+### MENU
+
+to config your menu you can create folders inside the `docs` folder;
+and to display you just need change the atribute `configDirs` in your
+`_app` component;
+
+`dirs:` is a simple folder with the index file inside;
+`subDirs:` is a submenu configuration to create a select folder in menu;
+
+##### Example:
+
+```
+import React from "react";
+import ComponentOrDocs from "doc_docs";
+import "./_app.css";
+
+function MyApp({ Component, pageProps, router }) {
+  return (
+    <ComponentOrDocs
+      Component={Component}
+      pageProps={pageProps}
+      route={router}
+      // this is a menu configuration;
+      configDirs={{
+        dirs: [ "api", "other_path"],
+        subDirs: { api: ["user", "auth"] },
+      }}
+      // end of menu configuration;
+    />
+  );
+}
+
+export default MyApp;
+```
+
 ### CUSTOM LOGO
 
 to set a custom logo you can use `projectLogo` attribute;
