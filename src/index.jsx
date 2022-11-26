@@ -1,6 +1,5 @@
 import React from "react";
 import TemplateReactDocs from "./components/Template";
-import { readDirs, readNavDir } from "./core/readDir";
 import ColorProvider from "./provider/ColorProvider";
 
 export default function ComponentOrDocs(props) {
@@ -29,10 +28,4 @@ export default function ComponentOrDocs(props) {
       )}
     </>
   );
-}
-
-export function initialProps() {
-  const subDirs = readDirs("./src/pages/docs/");
-  const dirs = readNavDir("./src/pages/docs");
-  return { subDirs: subDirs, dirs: dirs };
 }

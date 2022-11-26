@@ -23,10 +23,15 @@
     "build": "next build",
     "compile": "tsc",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --coverage"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "fs": "^0.0.1-security",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
     "next": "^13.0.3",
     "nookies": "^2.5.2",
     "react-icons": "4.6.0"
